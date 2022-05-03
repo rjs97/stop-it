@@ -1,6 +1,6 @@
 {
   "name": "Stop it",
-  "description": "No more scrolling through sites you don't even want to be on",
+  "description": "You don't have enough self control on your own",
   "version": "0.0",
   "permissions": [
     "webRequest",
