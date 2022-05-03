@@ -1,0 +1,14 @@
+{
+  "name": "Stop it",
+  "description": "No more scrolling through sites you don't even want to be on",
+  "version": "0.0",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "manifest_version": 2
+}
