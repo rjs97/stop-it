@@ -1,0 +1,9 @@
+[{
+  "id": 1,
+  "action": { "type": "block" },
+  "enabled": true,
+  "condition" : {
+    "regexFilter": "(facebook|instagram|twitter|reddit|meta|x\\.com)",
+    "resourceTypes" : ["main_frame"]
+  }
+}]

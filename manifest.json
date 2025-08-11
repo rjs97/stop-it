@@ -1,14 +1,16 @@
 {
-  "name": "Stop it",
+  "name": "stop it",
   "description": "You don't have enough self control on your own",
-  "version": "0.0",
+  "version": "0.1",
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
-    "<all_urls>"
+    "declarativeNetRequest"
   ],
-  "background": {
-    "scripts": ["background.js"]
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "stop_em",
+      "enabled": true,
+      "path": "block.json"
+    }]
   },
-  "manifest_version": 2
+  "manifest_version": 3
 }
