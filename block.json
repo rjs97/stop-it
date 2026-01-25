@@ -3,7 +3,7 @@
   "action": { "type": "block" },
   "enabled": true,
   "condition" : {
-    "regexFilter": "(facebook|instagram|twitter|reddit|meta|x\\.com)",
+    "regexFilter": "^(https?:\\/\\/)(www\\.)?((facebook|instagram|twitter|reddit|meta|x)\\.com\\/.*)",
     "resourceTypes" : ["main_frame"]
   }
 }]
