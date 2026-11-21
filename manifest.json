@@ -3,7 +3,16 @@
   "description": "You don't have enough self control on your own",
   "version": "0.1",
   "permissions": [
-    "declarativeNetRequest"
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "*://*.facebook.com/*",
+    "*://*.instagram.com/*",
+    "*://*.twitter.com/*",
+    "*://*.reddit.com/*",
+    "*://*.meta.com/*",
+    "*://*.x.com/*"
   ],
   "declarative_net_request": {
     "rule_resources": [{
