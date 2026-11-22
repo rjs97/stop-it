@@ -33,16 +33,21 @@ getPictures().then(async photos => {
     const img = document.createElement("img");
 
     img.src = URL.createObjectURL(p.image);
-
-    document.body.appendChild(img);
+    const wos = document.getElementById("wall-of-shame")
+    wos.appendChild(img);
   })
 })
 
 const item = window.localStorage.getItem("stop-it-count")
 const data = item ? JSON.parse(item) : { "date": Date.now(), "count": 1 }
-const ms_day = 86400000
+const msDay = 86400000
 
-if (Date.now() - data.date < ms_day) {
+const stats = document.createElement("h3")
+stats.textContent = `${data.count} visits since ${Date(data.date).toLocaleString()}...`
+const h1 = document.getElementById("title")
+h1.appendChild(stats)
+
+if (Date.now() - data.date < msDay) {
   console.log(Date.now() - data.date, data.count)
   if (data.count > 5) {
     takePicture().then(async () => {
