@@ -29,6 +29,11 @@ const takePicture = async () => {
 }
 
 getPictures().then(async photos => {
+  const photoMax = 1
+  if (photos.length > photoMax) {
+    toDelete = photos.slice(0, -photoMax)
+    toDelete.forEach(d => deletePicture(d.id))
+  }
   photos.forEach(p => {
     const img = document.createElement("img");
 

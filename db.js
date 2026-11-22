@@ -48,6 +48,19 @@ async function getPictures() {
   });
 }
 
+async function deletePicture(id) {
+  const db = await openDatabase();
+
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction("photos", "readwrite");
+
+    transaction.objectStore("photos").delete(id);
+
+    transaction.oncomplete = () => resolve(console.log(`deleted photo id ${id}`));
+    transaction.onerror = () => reject(transaction.error);
+  });
+}
+
 function deleteDB() {
   const request = indexedDB.open("StopItPhotos", 3);
 
