@@ -28,17 +28,38 @@ const takePicture = async () => {
 
 }
 
-// deleteDB()
-takePicture().then(async () => {
-  photos = await getPictures()
-  photos.forEach(photo => {
+getPictures().then(async photos => {
+  photos.forEach(p => {
     const img = document.createElement("img");
 
-    img.src = URL.createObjectURL(photo.image);
+    img.src = URL.createObjectURL(p.image);
 
     document.body.appendChild(img);
-  });
-  console.log("Picture saved!")
+  })
 })
+
+const item = window.localStorage.getItem("stop-it-count")
+const data = item ? JSON.parse(item) : { "date": Date.now(), "count": 1 }
+const ms_day = 86400000
+
+if (Date.now() - data.date < ms_day) {
+  console.log(Date.now() - data.date, data.count)
+  if (data.count > 5) {
+    takePicture().then(async () => {
+      console.log("Picture saved!")
+    })
+    data.count = 0
+  }
+} else {
+  data.date = Date.now()
+  data.count = 0
+}
+data.count++
+
+window.localStorage.setItem("stop-it-count", JSON.stringify(data))
+
+
+// deleteDB()
+
 
 
