@@ -28,7 +28,7 @@ async function savePicture(blob) {
       date: new Date().toISOString()
     });
 
-    transaction.oncomplete = () => resolve();
+    transaction.oncomplete = () => resolve(console.log("Picture saved!"));
     transaction.onerror = () => reject(transaction.error);
   });
 }
