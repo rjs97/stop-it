@@ -1,4 +1,4 @@
-
+// AI Aided
 function openDatabase() {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open("StopItPhotos", 3);
