@@ -2,7 +2,6 @@
   "id": 1,
   "priority": 1,
   "action": { "type": "redirect", "redirect": { "extensionPath": "/blocked.html" } },
-  "enabled": true,
   "condition" : {
     "regexFilter": "^(https?:\\/\\/)(www\\.)?((facebook|instagram|twitter|reddit|meta|x)\\.com\\/.*)",
     "resourceTypes" : ["main_frame"]
